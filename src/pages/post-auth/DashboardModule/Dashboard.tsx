@@ -107,7 +107,19 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="mt-16">
+    <div className="mt-0 lg:mt-16 pb-20 lg:pb-0">
+      <div className="dash-header">
+        <h3>Dashboard</h3>
+        <div className="sy-card bg-green border-0 m-0 border-primary">
+          <div className="flex items-center">
+            <div className="artist-img"><img src={require('../../../assets/images/p-3.svg').default} /></div>
+            <div className="px-3">
+              <h5 className="text-white">Booba</h5>
+            </div>
+          </div>
+          <div className="icon-block"><a href="#"><img src={require('../../../assets/images/right-arrow-right.svg').default} /></a></div>
+        </div>
+      </div>
       <div className="w-full md:w-8/12 mx-auto">
         <div className="header">
           <h2 className="my-4 font-medium text-xl">Jayson</h2>
@@ -250,109 +262,109 @@ const Dashboard = () => {
               </div>
               <ul>
                 <Link to="/dashboard/content">
-                <li className="p-3 border-t border-b flex flex-row">
-                  <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
-                    <div>
-                      <img className="relative" style={{minWidth: 70}} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                      <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                  <li className="p-3 border-t border-b flex flex-row">
+                    <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
+                      <div>
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                      </div>
+                      <div className="text-center ml-3">
+                        <p>Jaune</p>
+                        <p>Video</p>
+                      </div>
                     </div>
-                    <div className="text-center ml-3">
-                      <p>Jaune</p>
-                      <p>Video</p>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">100k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+5.9%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
                     </div>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">100k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+5.9%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">49</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+1.3%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">12k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+3.2%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                </li>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">49</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+1.3%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">12k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+3.2%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                  </li>
                 </Link>
                 <Link to="/dashboard/content">
-                <li className="p-3 border-t border-b flex flex-row">
-                  <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
-                    <div>
-                      <img className="relative" style={{minWidth: 70}} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                      <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                  <li className="p-3 border-t border-b flex flex-row">
+                    <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
+                      <div>
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                      </div>
+                      <div className="text-center ml-3">
+                        <p>Jaune</p>
+                        <p>Video</p>
+                      </div>
                     </div>
-                    <div className="text-center ml-3">
-                      <p>Jaune</p>
-                      <p>Video</p>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">100k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+5.9%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
                     </div>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">100k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+5.9%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">49</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+1.3%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">12k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+3.2%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                </li>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">49</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+1.3%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">12k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+3.2%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                  </li>
                 </Link>
                 <Link to="/dashboard/content">
-                <li className="p-3 border-t border-b flex flex-row">
-                  <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
-                    <div>
-                      <img className="relative" style={{minWidth: 70}} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                      <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                  <li className="p-3 border-t border-b flex flex-row">
+                    <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
+                      <div>
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                      </div>
+                      <div className="text-center ml-3">
+                        <p>Jaune</p>
+                        <p>Video</p>
+                      </div>
                     </div>
-                    <div className="text-center ml-3">
-                      <p>Jaune</p>
-                      <p>Video</p>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">100k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+5.9%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
                     </div>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">100k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+5.9%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">49</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+1.3%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                  <div className="w-3/12 self-center text-center">
-                    <p className="text-sm font-bold py-2">12k</p>
-                    <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
-                      <span>+3.2%</span>
-                      <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
-                    </p>
-                  </div>
-                </li>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">49</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+1.3%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                    <div className="w-3/12 self-center text-center">
+                      <p className="text-sm font-bold py-2">12k</p>
+                      <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
+                        <span>+3.2%</span>
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                      </p>
+                    </div>
+                  </li>
                 </Link>
               </ul>
             </div>
