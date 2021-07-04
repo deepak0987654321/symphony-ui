@@ -107,7 +107,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="mt-0 lg:mt-16 pb-20 lg:pb-0">
+    <div className="mt-0 pb-20 lg:pb-0">
       <div className="dash-header">
         <h3>Dashboard</h3>
         <div className="sy-card bg-green border-0 m-0 border-primary">
@@ -122,7 +122,7 @@ const Dashboard = () => {
       </div>
       <div className="w-full md:w-8/12 mx-auto">
         <div className="header">
-          <h2 className="my-4 font-medium text-xl">Jayson</h2>
+          <h2 className="my-4 font-medium text-xl px-4">Jayson</h2>
         </div>
         <nav className="flex border-b border-gray-300">
           <TabSelector
@@ -265,7 +265,7 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="relative w-10 h-10 md:w-16 md:h-16 " style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
                         <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
                       </div>
                       <div className="text-center ml-3">
@@ -300,7 +300,7 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="relative w-10 h-10 md:w-16 md:h-16" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
                         <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
                       </div>
                       <div className="text-center ml-3">
@@ -335,7 +335,7 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
+                        <img className="relative w-10 h-10 md:w-16 md:h-16" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
                         <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
                       </div>
                       <div className="text-center ml-3">

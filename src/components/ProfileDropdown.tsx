@@ -2,13 +2,11 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Fade from '@material-ui/core/Fade';
 
-export default function FadeMenu() {
+export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -18,19 +16,17 @@ export default function FadeMenu() {
 
   return (
     <div>
-      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
-        Open with fade transition
+      <Button className="text-white"aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <img className="w-10 h-10 inline-block" src={require('../assets/images/profileIcon.svg').default} />
+        <span className="text-white pl-2">Name</span>
       </Button>
       <Menu
-        id="fade-menu"
+        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
-        open={open}
+        open={Boolean(anchorEl)}
         onClose={handleClose}
-        TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>

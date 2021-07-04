@@ -11,7 +11,9 @@ const Landing = () => {
             <h3 className="text-white text-2xl al">
               How to get started
               <img
-                src="../public/images/close.svg"
+                src={
+                  require("../../assets/images/close.svg").default
+                }
                 className="float-right w-4 mt-2"
               />
             </h3>
