@@ -222,8 +222,8 @@ const Dashboard = () => {
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
                     <img width={50} src={require('../../../assets/images/soundcloud.svg').default} />
-                    <div className="ml-2 text-center self-center">
-                      <p className="text-left text-sm ml-3">Connect Soundcloud to pull daily follower growth</p>
+                    <div className="text-center self-center">
+                      <p className="text-left text-sm ml-4 mr-8">Connect Soundcloud to pull daily follower growth</p>
                     </div>
                   </div>
                   {/* <div className="w-6/12">
@@ -238,8 +238,8 @@ const Dashboard = () => {
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
                     <img width={50} src={require('../../../assets/images/audiomack.svg').default} />
-                    <div className="ml-2 text-center self-center">
-                      <p className="text-left text-sm ml-3">Connect Audiomack to pull daily follower growth</p>
+                    <div className="text-center self-center">
+                      <p className="text-left text-sm ml-4 mr-8">Connect Audiomack to pull daily follower growth</p>
                     </div>
                   </div>
                   {/* <div className="w-6/12">
