@@ -1,17 +1,17 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import AddArtist from "../../pages/post-auth/add-artist";
+import AddArtist from "../../pages/post-auth/AddArtist";
 import Landing from "../../pages/post-auth/Landing";
 import DashboardRoutes from "../../pages/post-auth/DashboardModule/DashboardRoutes";
 
 const PostAuthRoutes = () => {
   const DashboardRoutes = lazy(() => import('../../pages/post-auth/DashboardModule/DashboardRoutes'));
   return (
-    <div>
+    <div className="bg-background-100 min-h-screen h-full">
       <Router>
         <Navbar />
-        <div className="p-2 mt-8">
+        <div className="main-body">
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
           <Route exact path="/" component={Landing} />
