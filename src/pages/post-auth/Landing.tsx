@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { OnboardingSlider } from "../../components/OnboardingSlider";
 
 const Landing = () => {
@@ -25,7 +26,9 @@ const Landing = () => {
             <div className="bottom-24 swiper-pagination"></div> */}
             {/* Button  */}
             <div className="text-center absolute w-full bottom-10">
+            <Link to="/add-artist">
               <button className="btn-primary">Get started</button>
+            </Link>
             </div>
           </div>
         </div>
