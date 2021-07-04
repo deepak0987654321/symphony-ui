@@ -7,10 +7,10 @@ import Landing from "../../pages/post-auth/Landing";
 
 const PostAuthRoutes = () => {
   return (
-    <div>
+    <div className="bg-background-100 min-h-screen h-full">
       <Router>
         <Navbar />
-        <div className="p-2 mt-8">
+        <div className="main-body">
           <Switch>
           <Route exact path="/" component={Landing} />
             <Route exact path="/add-artist" component={AddArtist} />
