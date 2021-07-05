@@ -12,7 +12,10 @@ const PostAuthRoutes = () => {
       <Router>
         <Navbar />
         <div className="main-body">
+<<<<<<< HEAD
         <Suspense fallback={<div>Loading...</div>}>
+=======
+>>>>>>> 4b58ae66c51c56e3b3d0935364b13c165be44204
           <Switch>
           <Route exact path="/" component={Landing} />
             <Route path="/add-artist" component={AddArtist} />
