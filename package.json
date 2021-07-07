@@ -36,7 +36,7 @@
     "build:tailwind": "tailwindcss build -i src/styles/index.css -o src/styles/tailwind.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind",
-    "start": "craco start",
+    "start": "node server",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
