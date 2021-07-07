@@ -95,7 +95,7 @@ const miniChartOptions = {
 };
 
 const Dashboard = () => {
-
+  console.log('inside dashboard page')
   let history = useHistory();
 
   const tabs = ['overall', 'content'];
@@ -112,12 +112,12 @@ const Dashboard = () => {
         <h3>Dashboard</h3>
         <div className="sy-card bg-green border-0 m-0 border-primary">
           <div className="flex items-center">
-            <div className="artist-img"><img src={require('../../../assets/images/p-3.svg').default} /></div>
+            <div className="artist-img"><img src={require('../../../assets/images/p-3.svg').default} alt="" /></div>
             <div className="px-3">
               <h5 className="text-white">Booba</h5>
             </div>
           </div>
-          <div className="icon-block"><a href="#"><img src={require('../../../assets/images/right-arrow-right.svg').default} /></a></div>
+          <div className="icon-block"><a href="#"><img src={require('../../../assets/images/right-arrow-right.svg').default} alt="" /></a></div>
         </div>
       </div>
       <div className="w-full md:w-8/12 mx-auto">
@@ -148,7 +148,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/facebook.svg').default} />
+                    <img width={50} src={require('../../../assets/images/facebook.svg').default} alt="" />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
@@ -165,7 +165,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/insta.svg').default} />
+                    <img width={50} src={require('../../../assets/images/insta.svg').default} alt="" />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
@@ -184,7 +184,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/twitter.svg').default} />
+                    <img width={50} src={require('../../../assets/images/twitter.svg').default} alt="" />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
@@ -201,7 +201,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/spotify.svg').default} />
+                    <img width={50} src={require('../../../assets/images/spotify.svg').default} alt="" />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
@@ -221,7 +221,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/soundcloud.svg').default} />
+                    <img width={50} src={require('../../../assets/images/soundcloud.svg').default} alt="" />
                     <div className="text-center self-center">
                       <p className="text-left text-sm ml-4 mr-8">Connect Soundcloud to pull daily follower growth</p>
                     </div>
@@ -237,7 +237,7 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/audiomack.svg').default} />
+                    <img width={50} src={require('../../../assets/images/audiomack.svg').default} alt="" />
                     <div className="text-center self-center">
                       <p className="text-left text-sm ml-4 mr-8">Connect Audiomack to pull daily follower growth</p>
                     </div>
@@ -265,8 +265,8 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} alt="" />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} alt="" />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -277,21 +277,21 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                   </li>
@@ -300,8 +300,8 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} alt="" />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} alt="" />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -312,21 +312,21 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                   </li>
@@ -335,8 +335,8 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img className="relative" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} alt="" />
+                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} alt="" />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -347,21 +347,21 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} alt="" />
                       </p>
                     </div>
                   </li>
