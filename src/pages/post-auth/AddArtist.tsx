@@ -44,7 +44,7 @@ const AddArtist = () => {
                 Add an artist
               </h4>
             </div>
-            <nav className="flex border-b border-gray-300">
+            <nav className="flex flex-row justify-between border-b border-gray-300">
               <TabSelector
                 isActive={selectedTab === 'basic'}
                 onClick={() => setSelectedTab('basic')}
