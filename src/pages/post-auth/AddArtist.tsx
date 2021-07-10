@@ -44,7 +44,7 @@ const AddArtist = () => {
                 Add an artist
               </h4>
             </div>
-            <nav className="flex border-b border-gray-300">
+            <nav className="flex flex-row justify-between border-b border-gray-300">
               <TabSelector
                 isActive={selectedTab === 'basic'}
                 onClick={() => setSelectedTab('basic')}
@@ -165,7 +165,7 @@ const AddArtist = () => {
                   <form action="">
                     <hr className="h-px	bg-gray-200" />
                     <div className="add-new">
-                      <a href="#">
+                      <div>
                         <div className="sy-card">
                           <div className="flex flex-none text-center">
                             <div className="artist-img">
@@ -191,8 +191,8 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
-                      <a href="#">
+                      </div>
+                      <div>
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
@@ -220,8 +220,8 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
-                      <a href="#">
+                      </div>
+                      <div>
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
@@ -249,7 +249,7 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
+                      </div>
                     </div>
 
                     <div className="pt-10 pb-5 hr-bline">
@@ -259,8 +259,7 @@ const AddArtist = () => {
                       </p>
                     </div>
                     <div className="add-new">
-                      <a href="#"></a>
-                      <a href="#">
+                      <div>
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
@@ -288,8 +287,8 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
-                      <a href="#">
+                      </div>
+                      <div>
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
@@ -317,8 +316,8 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
-                      <a href="#">
+                      </div>
+                      <div>
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
@@ -346,7 +345,7 @@ const AddArtist = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   </form>
                 </div>

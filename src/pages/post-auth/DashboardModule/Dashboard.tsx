@@ -1,18 +1,17 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React from "react";
+import { Line } from "react-chartjs-2";
 import { useTabs, TabPanel } from "react-headless-tabs";
-import { Link, useHistory } from 'react-router-dom';
-import { TabSelector } from '../../../helpers/TabSelector';
-
+import { Link, useHistory } from "react-router-dom";
+import { TabSelector } from "../../../helpers/TabSelector";
 
 const overallChartData = {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   datasets: [
     {
       data: [12, 15, 5, 7, 8, 3, 7],
       fill: true,
-      backgroundColor: '#E8F9E8',
-      borderColor: '#19C221'
+      backgroundColor: "#E8F9E8",
+      borderColor: "#19C221",
     },
   ],
 };
@@ -21,7 +20,7 @@ const overallChartOptions = {
   scales: {
     x: {
       grid: {
-        display: false
+        display: false,
       },
       // ticks: {
       //   display: false
@@ -31,22 +30,22 @@ const overallChartOptions = {
   plugins: {
     title: {
       display: true,
-      text: 'Fanbase Growth',
-      color: '#262324',
-      align: 'start',
+      text: "Fanbase Growth",
+      color: "#262324",
+      align: "start",
       font: {
-        text: 'left',
+        text: "left",
         size: 16,
-        family: 'tahoma',
-        weight: '500',
-        style: 'normal'
+        family: "tahoma",
+        weight: "500",
+        style: "normal",
       },
       padding: {
         bottom: 15,
       },
     },
     legend: {
-      display: false
+      display: false,
     },
   },
   // maintainAspectRatio: false,
@@ -54,13 +53,13 @@ const overallChartOptions = {
 };
 
 const miniChartData = {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   datasets: [
     {
       data: [12, 15, 3, 5, 11, 3, 7],
       fill: true,
-      backgroundColor: '#E8F9E8',
-      borderColor: '#19C221'
+      backgroundColor: "#E8F9E8",
+      borderColor: "#19C221",
     },
   ],
 };
@@ -69,42 +68,41 @@ const miniChartOptions = {
   scales: {
     x: {
       grid: {
-        display: false
+        display: false,
       },
       ticks: {
-        display: false
-      }
+        display: false,
+      },
     },
-    y:
-    {
+    y: {
       grid: {
-        display: false
+        display: false,
       },
       ticks: {
-        display: false
-      }
-    }
+        display: false,
+      },
+    },
   },
   plugins: {
     legend: {
-      display: false
+      display: false,
     },
   },
   maintainAspectRatio: false,
-  responsive: true
+  responsive: true,
 };
 
 const Dashboard = () => {
-
+  console.log("inside dashboard page");
   let history = useHistory();
 
-  const tabs = ['overall', 'content'];
-  const defaultTab = 'overall';
+  const tabs = ["overall", "content"];
+  const defaultTab = "overall";
   const [selectedTab, setSelectedTab] = useTabs(tabs, defaultTab);
 
   const handleClick = (path: string) => {
     history.push(path);
-  }
+  };
 
   return (
     <div className="mt-0 pb-20 lg:pb-0">
@@ -112,12 +110,27 @@ const Dashboard = () => {
         <h3>Dashboard</h3>
         <div className="sy-card bg-green border-0 m-0 border-primary">
           <div className="flex items-center">
-            <div className="artist-img"><img src={require('../../../assets/images/p-3.svg').default} /></div>
+            <div className="artist-img">
+              <img
+                src={require("../../../assets/images/p-3.svg").default}
+                alt=""
+              />
+            </div>
             <div className="px-3">
               <h5 className="text-white">Booba</h5>
             </div>
           </div>
-          <div className="icon-block"><a href="#"><img src={require('../../../assets/images/right-arrow-right.svg').default} /></a></div>
+          <div className="icon-block">
+            <a href="#">
+              <img
+                src={
+                  require("../../../assets/images/right-arrow-right.svg")
+                    .default
+                }
+                alt=""
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div className="w-full md:w-8/12 mx-auto">
@@ -126,36 +139,52 @@ const Dashboard = () => {
         </div>
         <nav className="flex border-b border-gray-300">
           <TabSelector
-            isActive={selectedTab === 'overall'}
-            onClick={() => setSelectedTab('overall')}
+            isActive={selectedTab === "overall"}
+            onClick={() => setSelectedTab("overall")}
           >
             Overall
           </TabSelector>
           <TabSelector
-            isActive={selectedTab === 'content'}
-            onClick={() => setSelectedTab('content')}
+            isActive={selectedTab === "content"}
+            onClick={() => setSelectedTab("content")}
           >
             Content
           </TabSelector>
         </nav>
         <div className="p-4">
-          <TabPanel hidden={selectedTab !== 'overall'}>
+          <TabPanel hidden={selectedTab !== "overall"}>
             <div className="md:w-11/12 mx-auto">
-              <Line type={"line"} data={overallChartData} options={overallChartOptions} />
+              <Line
+                type={"line"}
+                data={overallChartData}
+                options={overallChartOptions}
+              />
             </div>
             <h4 className="mt-8 font-medium text-xl">PLATFORMS</h4>
             <div className="flex flex-row md:flex-nowrap flex-wrap gap-8 py-3 md:border-b">
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/facebook.svg').default} />
+                    <img
+                      width={50}
+                      src={
+                        require("../../../assets/images/facebook.svg").default
+                      }
+                      alt=""
+                    />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
                     </div>
                   </div>
                   <div className="w-6/12">
-                    <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
+                    <Line
+                      className="object-scale-down"
+                      height={80}
+                      type={"line"}
+                      data={miniChartData}
+                      options={miniChartOptions}
+                    />
                   </div>
                   <div className="w-auto">
                     <p className="text-primary text-sm">+1.3%</p>
@@ -165,14 +194,24 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/insta.svg').default} />
+                    <img
+                      width={50}
+                      src={require("../../../assets/images/insta.svg").default}
+                      alt=""
+                    />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
                     </div>
                   </div>
                   <div className="w-6/12">
-                    <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
+                    <Line
+                      className="object-scale-down"
+                      height={80}
+                      type={"line"}
+                      data={miniChartData}
+                      options={miniChartOptions}
+                    />
                   </div>
                   <div className="w-auto">
                     <p className="text-primary text-sm">+1.3%</p>
@@ -184,14 +223,26 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/twitter.svg').default} />
+                    <img
+                      width={50}
+                      src={
+                        require("../../../assets/images/twitter.svg").default
+                      }
+                      alt=""
+                    />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
                     </div>
                   </div>
                   <div className="w-6/12">
-                    <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
+                    <Line
+                      className="object-scale-down"
+                      height={80}
+                      type={"line"}
+                      data={miniChartData}
+                      options={miniChartOptions}
+                    />
                   </div>
                   <div className="w-auto">
                     <p className="text-primary text-sm">+1.3%</p>
@@ -201,14 +252,26 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/spotify.svg').default} />
+                    <img
+                      width={50}
+                      src={
+                        require("../../../assets/images/spotify.svg").default
+                      }
+                      alt=""
+                    />
                     <div className="ml-2 text-center self-center">
                       <p>+300</p>
                       <p>6.5k</p>
                     </div>
                   </div>
                   <div className="w-6/12">
-                    <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
+                    <Line
+                      className="object-scale-down"
+                      height={80}
+                      type={"line"}
+                      data={miniChartData}
+                      options={miniChartOptions}
+                    />
                   </div>
                   <div className="w-auto">
                     <p className="text-primary text-sm">+1.3%</p>
@@ -221,38 +284,64 @@ const Dashboard = () => {
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/soundcloud.svg').default} />
+                    <img
+                      width={50}
+                      src={
+                        require("../../../assets/images/soundcloud.svg").default
+                      }
+                      alt=""
+                    />
                     <div className="text-center self-center">
-                      <p className="text-left text-sm ml-4 mr-8">Connect Soundcloud to pull daily follower growth</p>
+                      <p className="text-left text-sm ml-4 mr-8">
+                        Connect Soundcloud to pull daily follower growth
+                      </p>
                     </div>
                   </div>
                   {/* <div className="w-6/12">
                     <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
                   </div> */}
                   <div className="w-auto">
-                    <a href="/add-artist?tab=connect" className="text-primary text-sm">Connect</a>
+                    <a
+                      href="/add-artist?tab=connect"
+                      className="text-primary text-sm"
+                    >
+                      Connect
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="w-full md:w-6/12 border-b md:border-b-0">
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-row">
-                    <img width={50} src={require('../../../assets/images/audiomack.svg').default} />
+                    <img
+                      width={50}
+                      src={
+                        require("../../../assets/images/audiomack.svg").default
+                      }
+                      alt=""
+                    />
                     <div className="text-center self-center">
-                      <p className="text-left text-sm ml-4 mr-8">Connect Audiomack to pull daily follower growth</p>
+                      <p className="text-left text-sm ml-4 mr-8">
+                        Connect Audiomack to pull daily follower growth
+                      </p>
                     </div>
                   </div>
                   {/* <div className="w-6/12">
                     <Line className="object-scale-down" height={80} type={"line"} data={miniChartData} options={miniChartOptions} />
                   </div> */}
                   <div className="w-auto">
-                    <a href="/add-artist?tab=connect" className="text-primary text-sm">Connect</a>
+                    <a
+                      href="/add-artist?tab=connect"
+                      className="text-primary text-sm"
+                    >
+                      Connect
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </TabPanel>
-          <TabPanel hidden={selectedTab !== 'content'}>
+          <TabPanel hidden={selectedTab !== "content"}>
             <div>
               <div className="flex flex-row justify-between mb-1">
                 <div className="w-3/12"></div>
@@ -265,8 +354,27 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative w-10 h-10 md:w-16 md:h-16 " style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img
+                          className="relative w-10 h-10 md:w-16 md:h-16 "
+                          style={{ minWidth: 70 }}
+                          src={
+                            require("../../../assets/images/cariaus-album-1.svg")
+                              .default
+                          }
+                        />
+                        <img
+                          className="absolute"
+                          style={{
+                            marginLeft: "54px",
+                            marginTop: "-16px",
+                            zIndex: 1,
+                          }}
+                          width={20}
+                          src={
+                            require("../../../assets/images/youtube.svg")
+                              .default
+                          }
+                        />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -277,21 +385,42 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                   </li>
@@ -300,8 +429,27 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative w-10 h-10 md:w-16 md:h-16" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img
+                          className="relative w-10 h-10 md:w-16 md:h-16"
+                          style={{ minWidth: 70 }}
+                          src={
+                            require("../../../assets/images/cariaus-album-1.svg")
+                              .default
+                          }
+                        />
+                        <img
+                          className="absolute"
+                          style={{
+                            marginLeft: "54px",
+                            marginTop: "-16px",
+                            zIndex: 1,
+                          }}
+                          width={20}
+                          src={
+                            require("../../../assets/images/youtube.svg")
+                              .default
+                          }
+                        />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -312,21 +460,42 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                   </li>
@@ -335,8 +504,27 @@ const Dashboard = () => {
                   <li className="p-3 border-t border-b flex flex-row">
                     <div className="flex flex-row flex-wrap items-center w-3/12 text-center">
                       <div>
-                        <img className="relative w-10 h-10 md:w-16 md:h-16" style={{ minWidth: 70 }} src={require('../../../assets/images/cariaus-album-1.svg').default} />
-                        <img className="absolute" style={{ marginLeft: '54px', marginTop: '-16px', zIndex: 1 }} width={20} src={require('../../../assets/images/youtube.svg').default} />
+                        <img
+                          className="relative w-10 h-10 md:w-16 md:h-16"
+                          style={{ minWidth: 70 }}
+                          src={
+                            require("../../../assets/images/cariaus-album-1.svg")
+                              .default
+                          }
+                        />
+                        <img
+                          className="absolute"
+                          style={{
+                            marginLeft: "54px",
+                            marginTop: "-16px",
+                            zIndex: 1,
+                          }}
+                          width={20}
+                          src={
+                            require("../../../assets/images/youtube.svg")
+                              .default
+                          }
+                        />
                       </div>
                       <div className="text-center ml-3">
                         <p>Jaune</p>
@@ -347,21 +535,42 @@ const Dashboard = () => {
                       <p className="text-sm font-bold py-2">100k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+5.9%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">49</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+1.3%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                     <div className="w-3/12 self-center text-center">
                       <p className="text-sm font-bold py-2">12k</p>
                       <p className="text-primary text-sm font-bold py-2 flex flex-row justify-center">
                         <span>+3.2%</span>
-                        <img className="ml-1" src={require('../../../assets/images/carret-up.svg').default} />
+                        <img
+                          className="ml-1"
+                          src={
+                            require("../../../assets/images/carret-up.svg")
+                              .default
+                          }
+                          alt=""
+                        />
                       </p>
                     </div>
                   </li>
@@ -372,7 +581,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;
