@@ -11,7 +11,7 @@ module.exports = {
         primary: '#07c806',
         background: {
           100: '#F2F2F2',
-          200: '999999',
+          200: '#A3A3A3',
         },
         fontColor: {
           100: '#ADB7BC',

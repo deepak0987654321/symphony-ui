@@ -4,13 +4,14 @@ import Navbar from "../../components/Navbar";
 import AddArtist from "../../pages/post-auth/AddArtist";
 import Landing from "../../pages/post-auth/Landing";
 import DashboardRoutes from "../../pages/post-auth/DashboardModule/DashboardRoutes";
+import { Promote } from "../../pages/post-auth/Promote";
 
 const PostAuthRoutes = () => {
   const DashboardRoutes = lazy(
     () => import("../../pages/post-auth/DashboardModule/DashboardRoutes")
   );
   return (
-    <div className="bg-background-100 min-h-screen h-full">
+    <div className="bg-white lg:bg-background-100 min-h-screen h-full">
       <Router>
         <Navbar />
         <div className="main-body">
@@ -18,6 +19,7 @@ const PostAuthRoutes = () => {
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route path="/add-artist" component={AddArtist} />
+              <Route path="/promote" component={Promote} />
               <Route path="/dashboard" component={DashboardRoutes} />
             </Switch>
           </Suspense>

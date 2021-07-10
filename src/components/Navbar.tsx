@@ -9,16 +9,16 @@ import ProfileDropdown from "./ProfileDropdown";
 const Navbar = () => {
   return (
     <div className="relative ">
-      <section className=" fixed lg:relative bottom-0 lg:top-0 left-0 w-full z-50 py-2 md:py-4 px-0 md:px-4 lg:px-10 bg-white lg:bg-primary  w-full">
+      <section className=" fixed border-t border-background-100 lg:border-none lg:relative bottom-0 lg:top-0 pt-2 left-0 w-full z-50 py-2 md:py-4 px-0  lg:px-10 bg-white lg:bg-primary  w-full">
         <nav className="relative block lg:flex justify-center lg:justify-between items-center h-14 lg:h-auto w-full">
           <a className="hidden lg:block text-2xl text-white font-bold" href="#">
             <img src={symphonyLogo} width={"auto"} className="h-7" alt="logo" />
           </a>
           <div className="">
-            <ul className="flex items-center text-white justify-between">
+            <ul className="flex items-center text-white justify-around">
               <li>
                 <a
-                  className="text-black lg:text-white block lg:flex items-center p-1 sm:p-2"
+                  className="text-black lg:text-white block lg:flex items-center p-0 pt-2 sm:p-2"
                   href="/dashboard"
                 >
                   <div className="block lg:inline-block">
@@ -36,11 +36,11 @@ const Navbar = () => {
                         transform="translate(0.506 0.5)"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="1"
+                        stroke-width="1.3"
                       />
                     </svg>
                   </div>
-                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-light">
+                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-medium">
                     Dashboard
                   </div>
                 </a>
@@ -48,7 +48,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  className="text-black lg:text-white block lg:flex items-center p-1 sm:p-2"
+                  className="text-black lg:text-white block lg:flex items-center p-0 pt-2 sm:p-2"
                   href="/dashboard"
                 >
                   <div className="block lg:inline-block">
@@ -68,7 +68,7 @@ const Navbar = () => {
                       />
                     </svg>
                   </div>
-                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-light">
+                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-medium">
                     Profile
                   </div>
                 </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  className="text-black lg:text-white block lg:flex items-center p-1 sm:p-2"
+                  className="text-black lg:text-white block lg:flex items-center p-0 pt-2 sm:p-2"
                   href="/dashboard"
                 >
                   <div className="block lg:inline-block">
@@ -107,7 +107,7 @@ const Navbar = () => {
                       </g>
                     </svg>
                   </div>
-                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-light">
+                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-medium">
                     Marketing
                   </div>
                 </a>
@@ -115,7 +115,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  className="text-black lg:text-white block lg:flex items-center p-1 sm:p-2"
+                  className="text-black lg:text-white block lg:flex items-center p-0 pt-2 sm:p-2"
                   href="/dashboard"
                 >
                   <div className="block lg:inline-block">
@@ -134,11 +134,11 @@ const Navbar = () => {
                         fill="none"
                         stroke="currentColor"
                         stroke-miterlimit="10"
-                        stroke-width="0.65"
+                        stroke-width="1"
                       />
                     </svg>
                   </div>
-                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-light">
+                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-medium">
                     Website
                   </div>
                 </a>
@@ -146,7 +146,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  className="text-black lg:text-white block lg:flex items-center p-1 sm:p-2"
+                  className="text-black lg:text-white block lg:flex items-center p-0 pt-2 sm:p-2"
                   href="/dashboard"
                 >
                   <div className="block lg:inline-block">
@@ -169,7 +169,7 @@ const Navbar = () => {
                           fill="#fff"
                           stroke="currentColor"
                           stroke-miterlimit="10"
-                          stroke-width="0.3"
+                          stroke-width="0.7"
                         />
                         <path
                           id="Path_15056"
@@ -178,13 +178,13 @@ const Navbar = () => {
                           fill="currentColor"
                           stroke="currentColor"
                           stroke-miterlimit="10"
-                          stroke-width="0.3"
+                          stroke-width="0.7"
                         />
                       </g>
                     </svg>
                   </div>
-                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-light">
-                    Setting
+                  <div className=" block lg:inline-block px-1 py-1 lg:px-3 text-xs sm:text-lg md:text-lg font-medium">
+                    Settings
                   </div>
                 </a>
               </li>

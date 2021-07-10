@@ -26,7 +26,7 @@ export default function SimpleMenu() {
           className="w-10 h-10 inline-block"
           src={require("../assets/images/profileIcon.svg").default}
         />
-        <span className="text-white pl-2">Name</span>
+        <span className="text-white pl-2">Jackie S</span>
       </Button>
       <Menu
         id="simple-menu"

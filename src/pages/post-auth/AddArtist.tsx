@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Line } from 'react-chartjs-2';
+import { Line } from "react-chartjs-2";
 import { useTabs, TabPanel } from "react-headless-tabs";
 import { useLocation } from "react-router-dom";
-import { TabSelector } from '../../helpers/TabSelector';
+import { TabSelector } from "../../helpers/TabSelector";
 
 const AddArtist = () => {
-
-  const tabs = ['basic', 'connect'];
-  const defaultTab = 'basic';
-  const [selectedTab, setSelectedTab] = useTabs(tabs, defaultTab)
+  const tabs = ["basic", "connect"];
+  const defaultTab = "basic";
+  const [selectedTab, setSelectedTab] = useTabs(tabs, defaultTab);
   const [searchResults, setSearchResult] = useState([]);
-  const [searchStr, setSearchStr] = useState('');
+  const [searchStr, setSearchStr] = useState("");
   const location = useLocation();
 
   useEffect(() => {
-    if(location.search.includes('connect')) {
-      setSelectedTab('connect');
+    if (location.search.includes("connect")) {
+      setSelectedTab("connect");
     }
-  }, [])
+  }, []);
 
   const handleChange = (e: any) => {
     setSearchStr(e.target.value);
     console.log("searched for: ", e.target.value);
     if (e.target.value.length) {
-      fetch('http://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
+      fetch("http://jsonplaceholder.typicode.com/users")
+        .then((res) => res.json())
         .then((data) => {
           setSearchResult(data);
         })
-        .catch(console.log)
+        .catch(console.log);
     } else {
       setSearchResult([]);
     }
@@ -41,25 +40,25 @@ const AddArtist = () => {
           <div className="top-wrapper">
             <div className="card-head">
               <h4 className="text-center text-dark lg:text-white text-2xl al">
-                Add an artist
+                Create an artist
               </h4>
             </div>
-            <nav className="flex flex-row justify-between border-b border-gray-300">
+            <nav className="flex flex-row justify-center border-b border-gray-300">
               <TabSelector
-                isActive={selectedTab === 'basic'}
-                onClick={() => setSelectedTab('basic')}
+                isActive={selectedTab === "basic"}
+                onClick={() => setSelectedTab("basic")}
               >
-                Basic
+                Basic info
               </TabSelector>
               <TabSelector
-                isActive={selectedTab === 'connect'}
-                onClick={() => setSelectedTab('connect')}
+                isActive={selectedTab === "connect"}
+                onClick={() => setSelectedTab("connect")}
               >
                 Connect
               </TabSelector>
             </nav>
             <div className="">
-              <TabPanel hidden={selectedTab !== 'basic'}>
+              <TabPanel hidden={selectedTab !== "basic"}>
                 {/* <nav className="bg-white pt-2 border-b border-gray-200 ">
                   <div className="mb-px flex px-4 md:justify-between md:px-10 md:overscroll-none whitespace-nowrap">
                     <a
@@ -78,7 +77,9 @@ const AddArtist = () => {
                 </nav> */}
 
                 <div className="middle-wrapper px-4 lg:px-10 ">
-                  <h4 className="mt-10 mb-5 text-2xl">What is the name of the artist</h4>
+                  <h4 className="mt-10 pb-5 text-2x border-b border-gray-200">
+                    What is the name of the artist
+                  </h4>
                   {/* <hr className="h-px	bg-gray-200" /> */}
                   <form action="">
                     <div className="input-form flex flex-row align-middle">
@@ -97,38 +98,60 @@ const AddArtist = () => {
                       />
                     </div>
                     <div className="add-new">
-                      {searchResults.map((item: any) => {
-                        return (
-                          <div className="sy-card">
-                            <div className="flex items-center">
-                              <div className="artist-img">
-                                <img src={require('../../assets/images/p1.svg').default} />
-                                <div className="absolute top-4 -right-1 bottom-0 w-3 h-3">
-                                  <img src={require('../../assets/images/tick.svg').default} />
+                      {searchResults
+                        .map((item: any) => {
+                          return (
+                            <div className="sy-card">
+                              <div className="flex items-center">
+                                <div className="artist-img">
+                                  <img
+                                    src={
+                                      require("../../assets/images/p1.svg")
+                                        .default
+                                    }
+                                  />
+                                  <div className="absolute top-4 -right-1 bottom-0 w-3 h-3">
+                                    <img
+                                      src={
+                                        require("../../assets/images/tick.svg")
+                                          .default
+                                      }
+                                    />
+                                  </div>
+                                </div>
+                                <div className="px-3">
+                                  <h5 className="text-dark">{item.name}</h5>
+                                  <div className="flex flex-row items-center">
+                                    <div className="social-img">
+                                      <img
+                                        src={
+                                          require("../../assets/images/spotify.svg")
+                                            .default
+                                        }
+                                      />
+                                    </div>
+                                    <div className="social-text">
+                                      <p className="text-xs px-2">
+                                        2.3m monthly listeners
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="px-3">
-                                <h5 className="text-dark">{item.name}</h5>
-                                <div className="flex flex-row items-center">
-                                  <div className="social-img">
-                                    <img src={require('../../assets/images/spotify.svg').default} />
-                                  </div>
-                                  <div className="social-text">
-                                    <p className="text-xs px-2">
-                                      2.3m monthly listeners
-                                    </p>
-                                  </div>
-                                </div>
+                              <div className="icon-block">
+                                <a onClick={() => setSelectedTab("connect")}>
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
+                                </a>
                               </div>
                             </div>
-                            <div className="icon-block">
-                              <a onClick={() => setSelectedTab('connect')}>
-                                <img src={require('../../assets/images/right-arrow.svg').default} />
-                              </a>
-                            </div>
-                          </div>
-                        )
-                      }).splice(0, 3)}
+                          );
+                        })
+                        .splice(0, 3)}
                       {/* <a href="#">
       <div className="sy-card">
         <div className="flex items-center">
@@ -147,12 +170,10 @@ const AddArtist = () => {
       </div>
     </a> */}
                     </div>
-
                   </form>
                 </div>
-
               </TabPanel>
-              <TabPanel hidden={selectedTab !== 'connect'}>
+              <TabPanel hidden={selectedTab !== "connect"}>
                 <div className="middle-wrapper px-4 lg:px-10 ">
                   <h4 className="mt-10 mb-5 text-2xl">Your connections </h4>
                   <p>
@@ -169,7 +190,21 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex flex-none text-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/facebook.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/facebook.svg")
+                                    .default
+                                }
+                              />
+                              <div className="con-icon">
+                                <img
+                                  className="absolute w-4 h-4 "
+                                  src={
+                                    require("../../assets/images/tick.svg")
+                                      .default
+                                  }
+                                />
+                              </div>
                             </div>
                             <div className="px-3 items-center flex">
                               <h5 className="text-dark">Facebook</h5>
@@ -185,7 +220,12 @@ const AddArtist = () => {
                                   Booba official<span>50k followers</span>
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>
@@ -196,7 +236,12 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/insta.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/insta.svg")
+                                    .default
+                                }
+                              />
                             </div>
                             <div className="px-3">
                               <h5 className="text-dark">Instagram</h5>
@@ -214,7 +259,12 @@ const AddArtist = () => {
                                   50k followers
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>
@@ -225,7 +275,12 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/twitter.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/twitter.svg")
+                                    .default
+                                }
+                              />
                             </div>
                             <div className="px-3">
                               <h5 className="text-dark">Twitter</h5>
@@ -243,7 +298,12 @@ const AddArtist = () => {
                                   50k followers
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>
@@ -263,7 +323,12 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/youtube.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/youtube.svg")
+                                    .default
+                                }
+                              />
                             </div>
                             <div className="px-3">
                               <h5 className="text-dark">Youtube</h5>
@@ -281,7 +346,12 @@ const AddArtist = () => {
                                   50k followers
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>
@@ -292,7 +362,12 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/spotify.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/spotify.svg")
+                                    .default
+                                }
+                              />
                             </div>
                             <div className="px-3">
                               <h5 className="text-dark">Spotify</h5>
@@ -310,7 +385,12 @@ const AddArtist = () => {
                                   50k followers
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>
@@ -321,7 +401,12 @@ const AddArtist = () => {
                         <div className="sy-card">
                           <div className="flex items-center">
                             <div className="artist-img">
-                              <img src={require('../../assets/images/soundcloud.svg').default} />
+                              <img
+                                src={
+                                  require("../../assets/images/soundcloud.svg")
+                                    .default
+                                }
+                              />
                             </div>
                             <div className="px-3">
                               <h5 className="text-dark">Soundcloud</h5>
@@ -339,7 +424,12 @@ const AddArtist = () => {
                                   50k followers
                                 </p>
                                 <a href="#">
-                                  <img src={require('../../assets/images/right-arrow.svg').default} />
+                                  <img
+                                    src={
+                                      require("../../assets/images/right-arrow.svg")
+                                        .default
+                                    }
+                                  />
                                 </a>
                               </div>
                             </div>

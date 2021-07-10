@@ -151,7 +151,7 @@ const Dashboard = () => {
             Content
           </TabSelector>
         </nav>
-        <div className="p-4">
+        <div className="px-4 py-10 ">
           <TabPanel hidden={selectedTab !== "overall"}>
             <div className="md:w-11/12 mx-auto">
               <Line

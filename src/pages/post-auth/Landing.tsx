@@ -5,29 +5,14 @@ import { OnboardingSlider } from "../../components/OnboardingSlider";
 const Landing = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="card-body">
+      <div className="card-body z-10">
         <div className="bg-white shadow-none lg:shadow-lg">
           <div className="hidden lg:block bg-primary w-full p-8 text-center">
-            <h3 className="text-white text-2xl al">
-              How to get started
-              <img
-                src={require("../../assets/images/close.svg").default}
-                className="float-right w-4 mt-2"
-              />
-            </h3>
+            <h3 className="text-white text-2xl al">How to get started</h3>
           </div>
-          <div className="relative pb-20 h-screen lg:h-auto pt-28 lg:pt-0">
+          <div className="relative  p-4 lg:pß-28">
             <div className="swiper-wrapper p-0 lg:p-16 ">
               <OnboardingSlider />
-            </div>
-            {/* <div className="d-hidden md:d-flex swiper-button-prev bg-white w-16 h-16 text-xs rounded-full text-bg-primary"></div>
-            <div className="d-hidden md:d-flex swiper-button-next bg-white w-16 h-16 text-xs rounded-full text-bg-primary"></div>
-            <div className="bottom-24 swiper-pagination"></div> */}
-            {/* Button  */}
-            <div className="text-center absolute w-full bottom-10">
-              <Link to="/add-artist">
-                <button className="btn-primary">Get started</button>
-              </Link>
             </div>
           </div>
         </div>
